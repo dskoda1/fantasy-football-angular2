@@ -1,0 +1,35 @@
+### https://github.com/github/gitignore
+
+
+## WS
+.idea
+
+
+## Node
+# Logs
+*.log
+npm-debug.log*
+
+# Dependency directory
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules
+
+
+## OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+
+## Direnv
+.envrc
+
+
+## Dist
+dist

@@ -1,0 +1,16 @@
+<div fxLayout="column" fxFlex>
+	<!-- <md-toolbar>
+		<span>View All</span>
+    <span fxFlex></span>
+  </md-toolbar> -->
+
+      <md-list fxFlex class="playersList">
+        <md-list-item *ngFor="let player of players"
+        (click)="onSelect(player)"
+        [class.selected]="player === selectedPlayer">
+          <md-icon md-list-icon>person</md-icon>
+
+          {{player.name}}
+        </md-list-item>
+      </md-list>
+</div>

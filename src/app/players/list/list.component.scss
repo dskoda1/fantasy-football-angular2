@@ -1,0 +1,20 @@
+
+
+md-list-item {
+
+
+}
+md-list-item:hover {
+  background-color: rgba(158, 158, 158, 0.2);
+
+}
+
+md-list-item.selected {
+  background-color: rgba(160, 160, 160, 0.4);
+
+}
+
+md-list-item.selected:hover {
+  background-color: rgba(160, 160, 160, 0.6);
+
+}
