@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Player } from './player';
+import { Player } from './player.model';
 // import { HEROES } from './mock-heroes';
 
 
@@ -21,5 +21,11 @@ const PLAYERS: Player[] = [
 export class PlayersService {
   getPlayers(): Promise<Player[]> {
     return Promise.resolve(PLAYERS);
+  }
+
+  getPlayer(id: number): Promise<Player> {
+    return Promise.resolve(PLAYERS.find((player) => {
+      return player.id == id
+    }))
   }
 }

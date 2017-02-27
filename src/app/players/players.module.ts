@@ -5,13 +5,15 @@ import {SharedModule} from '../shared/shared.module';
 import {PlayersService} from './players.service';
 
 // Imported Components
-import {PlayersComponent} from './players.component';
 import {ListComponent} from './list/list.component';
+import {DetailComponent} from './detail/detail.component';
+// import {FormComponent} from './form/form.component';
 import {playersRouting} from './players.routing';
 
 const ENTRY_COMPONENTS = [
-	PlayersComponent,
-  ListComponent
+  ListComponent,
+  DetailComponent,
+  // FormComponent
 ];
 
 @NgModule({

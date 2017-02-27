@@ -82,7 +82,8 @@
     "ts-node": "^1.7.0",
     "tslint": "^4.4.2",
     "typescript": "2.0.10",
-    "yargs": "^6.6.0"
+    "yargs": "^6.6.0",
+    "concurrently": "^3.2.0"
   },
   "engines": {
     "node": ">= 7.4"

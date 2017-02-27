@@ -1,18 +1,48 @@
+import { TestBed, inject, async } from '@angular/core/testing';
 import {PlayersService} from  './players.service'
+// import {Player} from  './player.model'
 import {} from 'jasmine';
 
 describe('PlayersService', () => {
-  let service:  PlayersService;
 
   beforeEach(() => {
-    service = new PlayersService();
+    TestBed.configureTestingModule({
+        providers: [
+            {provide: PlayersService, useClass: PlayersService}
+        ]
+        // imports: [FormsModule, HttpModule]
+    });
   })
 
-  describe('It gets an array of players', () => {
-    // console.log(PlayersService)
-    // console.log(service)
-    // let players = service.getPlayers()
-    // expect(players).toBeTruthy()
+  it('should construct', async(inject(
+    [PlayersService], (service: PlayersService) => {
+    expect(service).toBeDefined();
+  })));
+
+  describe('#getPlayers', () => {
+    it('Should return an array of valid players', async(inject(
+      [PlayersService], (service: PlayersService) => {
+      service.getPlayers()
+            .then((players) => {
+              // Assert each player has a name and id
+              players.forEach((player) => {
+                expect(player.id).toBeDefined()
+                expect(player.name).toBeDefined()
+              })
+            });
+    })));
   })
+
+  describe('#getPlayer', () => {
+    it('Should return a player of matching id', async(inject(
+      [PlayersService], (service: PlayersService) => {
+      service.getPlayer(13)
+            .then((player) => {
+              // Assert each player has a name and id
+                expect(player.id).toEqual(13)
+            });
+    })));
+  })
+
 
 })

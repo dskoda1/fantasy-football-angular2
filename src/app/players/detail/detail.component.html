@@ -1,0 +1,23 @@
+<div fxLayout="column" fxFlex>
+
+  <div class="playerDetail">
+    <div *ngIf="player">
+      Id: {{player.id}}
+
+      <div *ngIf="isEditing">
+        <md-input-container>
+          <input mdInput [(ngModel)]="player.name" placeholder="name">
+        </md-input-container>
+        <button md-button (click)="edit()">Save</button>
+      </div>
+
+      <div *ngIf="!isEditing">
+        <label>name: </label>
+        {{player.name}}
+        <button (click)="edit()">Edit</button>
+
+      </div>
+    </div>
+  </div>
+
+</div>
